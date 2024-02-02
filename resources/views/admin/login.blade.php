@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-       <!-- Font Awesome -->
-   <link
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+        <!-- Custom fonts for this template-->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+    
+        <!-- Custom styles for this template-->
+        <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <link
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   rel="stylesheet"
 />
@@ -19,59 +31,80 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
   rel="stylesheet"
 />
+
+    <title>Admin Login</title>
+
+   
+
 </head>
-<body>
-    <!-- Section: Design Block -->
+
+<body class="bg-gradient-primary">
 
     <div class="container">
-<section class=" text-center text-lg-start">
-  <style>
-    .rounded-t-5 {
-      border-top-left-radius: 0.5rem;
-      border-top-right-radius: 0.5rem;
-    }
 
-    @media (min-width: 992px) {
-      .rounded-tr-lg-0 {
-        border-top-right-radius: 0;
-      }
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
 
-      .rounded-bl-lg-5 {
-        border-bottom-left-radius: 0.5rem;
-      }
-    }
-  </style>
-        <center><h1>LOGIN</h1></center>
-  <div class="card mb-3">
-    <div class="row g-0 d-flex align-items-center">
-      <div class="col-lg-4 d-none d-lg-flex">
-        <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" alt="Trendy Pants and Shoes"
-          class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
-      </div>
-      <div class="col-lg-8">
-        <div class="card-body py-5 px-md-5">
-          <form>
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="email" id="form2Example1" class="form-control" />
-              <label class="form-label" for="form2Example1">Username</label>
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block">
+
+
+                              <img style="width: 100%;margin:20px" src="{{asset('img/Adminlogin.jpg')}}" alt="">
+
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                    </div>
+                                    <form class="user">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                placeholder="Enter Email Address...">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" style="margin-top:20px" class="form-control form-control-user"
+                                                id="exampleInputPassword" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                           
+                                        </div>
+                                        <a style="margin-top:20px" href="index.html" class="btn btn-primary btn-user btn-block">
+                                            Login
+                                        </a>
+                                        <hr>
+                                       
+                                       
+                                    </form>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <!-- Password input -->
-            <div class="form-outline mb-4">
-              <input type="password" id="form2Example2" class="form-control" />
-              <label class="form-label" for="form2Example2">Password</label>
-            </div>
-            <!-- 2 column grid layout for inline styling -->
-            </div>
-            <!-- Submit button -->
-            <button type="button" class="btn btn-primary btn-block mb-4">login</button>
-          </form>
+
         </div>
-      </div>
+
     </div>
-  </div>
-</section>
-</div>
-<!-- Section: Design Block -->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
 </body>
+
 </html>

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
     return view('index');
 });
 
@@ -22,6 +23,20 @@ Route::get('/admin',function(){
 });
 Route::get('/adminpanel',function(){
     return view('admin/Adminpanel');
+});
+
+Route::get('/login',function(){
+
+
+    return view('User.User_login');
+
+});
+
+Route::get('/User_Registeration',function(){
+
+
+    return view('User.User_register');
+
 });
 
 

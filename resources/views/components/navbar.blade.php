@@ -1,4 +1,22 @@
 <div>
+
+
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+  rel="stylesheet"
+/>
+
+
 <!-- navbar css -->
 <link href="{{ asset('css/Navbar.css') }}" rel="stylesheet">
 <!-- navbar css end  -->
@@ -7,11 +25,11 @@
   <!-- Container wrapper -->
   <div class="container">
     <!-- Navbar brand -->
-    <a class="navbar-brand me-2" href="https://mdbgo.com/">
+    <a class="navbar-brand me-2" href="/">
       <img
-        src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+        src="{{asset('img/logo.png')}}"
         height="16"
-        alt="MDB Logo"
+        
         loading="lazy"
         style="margin-top: -1px;"/>
     </a>
@@ -46,9 +64,9 @@
       </ul>
       <!-- Left links -->
       <div class="d-flex align-items-center">
-        <button data-mdb-ripple-init type="button" class="btn btn-link px-3 me-2">
+       <a href="/login"> <button data-mdb-ripple-init type="button"  class="btn btn-link px-3 me-2">
           Login
-        </button>
+        </button></a>
       <a class="text-reset me-3" href="#">
         <i class="fas fa-shopping-cart"></i>
       </a>       
