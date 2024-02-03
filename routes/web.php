@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+
+// Admin Routes 
 Route::get('/', function () {
 
     return view('index');
@@ -23,7 +27,32 @@ Route::get('/admin',function(){
 });
 Route::get('/adminpanel',function(){
     return view('admin/Adminpanel');
+
 });
+
+
+// product Routes 
+Route::get('/product.mobile',function(){
+
+    return view('admin.product_list.mobile_product');
+
+});
+Route::get('/product.electronic',function(){
+
+
+    return view('admin.product_list.electronic_product');
+
+});
+Route::get('/product.fashion',function(){
+
+
+
+    return view('admin.product_list.fashion_product');
+
+});
+
+
+// User Routes
 
 Route::get('/login',function(){
 
