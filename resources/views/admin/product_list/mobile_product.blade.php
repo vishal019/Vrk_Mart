@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>Mobile</title>
-
+    <script src="https://kit.fontawesome.com/348fe7775e.js" crossorigin="anonymous"></script>
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
@@ -265,8 +265,65 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Mobile Phone</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Add Mobile
+                          </button>
+                          
+                          <!-- Modal -->
+                          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Add Mobile</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <form action="/add_mobile_product" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="form-group">
+                                          <label for="exampleInputEmail1">Brand Name</label>
+                                          <input name="brand_name" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter brand name">
+                                          {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="exampleInputPassword1">Mobile Model</label>
+                                          <input name="mobile_model" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the model name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Insert Image</label>
+                                            <input name="mobile_image" type="file" class="form-control" id="exampleInputPassword1" placeholder="">
+                                          </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Price</label>
+                                            <input name="price" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the price">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="exampleInputPassword1">Quantity</label>
+                                            <input name="qunatity" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the quantity">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="exampleInputPassword1">Description</label><br>
+                                            <textarea name="description" id="" cols="30" rows="3"></textarea>
+                                          </div>
+                                      
+                                       
+                                     
+
+
+
+
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-primary">Add</button>
+                                </div>
+                            </form>
+                              </div>
+                            </div>
+                          </div>
                     </div>
 
                     <!-- Content Row -->
@@ -372,33 +429,45 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Mobile Image</th>
+                                            <th> Company Name</th>
+                                            <th>Mobile Model</th>
+                                            <th>Price</th>
+                                            <th>Discription</th>
+                                            <th>Quantity</th>
+                                            <th>Edit</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
-                                        <tr>
+                                        {{-- <tr>
                                             <th>Name</th>
                                             <th>Position</th>
                                             <th>Office</th>
                                             <th>Age</th>
                                             <th>Start date</th>
                                             <th>Salary</th>
-                                        </tr>
+                                        </tr> --}}
                                     </tfoot>
                                     <tbody>
+
+                                      
+                                           
+                                                
+
+                                        @foreach ($mobile_data as $data )
+                                            
+                                       
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
+                                            <td> <img src="{{ url('img/products/'.$data->mobile_image) }}"style="height: 100px; width: 150px;"></td>
+                                            <td>{{$data->brand_name}}</td>
+                                            <td>{{$data->mobile_model}}</td>
+                                            <td>{{$data->price}}</td>
+                                            <td>{{$data->description}}</td>
+                                            <td>{{$data->qunatity}}</td>
+                                            <td> <a href="">Edit</a> &nbsp; <a style="color: red" href="">Delete</a></td>
                                         </tr>
+                                        @endforeach
+                                       
                                    
                                       
                                       

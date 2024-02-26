@@ -16,7 +16,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="/adminpanel">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -42,6 +42,8 @@
                 <a class="collapse-item" href="/product.mobile">Mobile</a>
                 <a class="collapse-item" href="/product.electronic">Electronics</a>
                 <a class="collapse-item" href="/product.fashion">Fashion</a>
+                <a class="collapse-item" href="/product.fashion">Home & Furniture</a>
+                <a class="collapse-item" href="/product.fashion">Appliances</a>
             </div>
         </div>
     </li>

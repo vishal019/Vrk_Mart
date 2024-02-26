@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MobileProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/admin',function(){
+
+Route::group(['middleware'=>'web'],function(){
+
+
+    Route::get('/admin',function(){
         return view('admin/login');
 });
 Route::get('/adminpanel',function(){
@@ -30,13 +35,14 @@ Route::get('/adminpanel',function(){
 
 });
 
+});
+
+
 
 // product Routes 
-Route::get('/product.mobile',function(){
+Route::get('/product.mobile',[MobileProductsController::class,'show']);
+Route::post('/add_mobile_product',[MobileProductsController::class,'create']);
 
-    return view('admin.product_list.mobile_product');
-
-});
 Route::get('/product.electronic',function(){
 
 

@@ -25,6 +25,7 @@
 <body>
 
   <x-navbar/>
+  <x-Frontend_product_category/>
 
 
     
