@@ -31,30 +31,10 @@ class MobileProductsController extends Controller
             $file-> move(public_path('img/products/'), $filename);
             $mobile->mobile_image= $filename;
         }
-
-                    // working
-
-        // $image = $req->file('mobile_image');
-        // $name=$image->getClientOriginalName();
-        // $image->storeAs('public',$name);
-
-        // $mobile->mobile_image=$name;
-
-                // working end 
-
-       
-
         $mobile->price=$req->input('price');
         $mobile->qunatity=$req->input('qunatity');
         $mobile->description=$req->input('description');
-
-        // echo($image);
-        
         $mobile->save();
-
-
-       
-        // return view('admin.product_list.mobile_product',['pd'=>$allData]);
         return redirect('product.mobile');
 
 

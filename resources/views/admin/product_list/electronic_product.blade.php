@@ -263,11 +263,73 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Electronic Devices</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div>
+                   <div class="row">
+                    <div class="container-fluid">
+
+                        <!-- Page Heading -->
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h3 mb-0 text-gray-800">Electronic Devices</h1>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                Add Electronic Devices
+                              </button>
+                              
+                              <!-- Modal -->
+                              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Add Electronic Devices</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+    
+                                        <form action="/add_electronic_product" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="form-group">
+                                              <label for="exampleInputEmail1">Brand Name</label>
+                                              <input name="brand_name" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter brand name">
+                                              {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="exampleInputPassword1">Product Name</label>
+                                              <input name="product_name" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the model name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Insert Image</label>
+                                                <input name="image" type="file" class="form-control" id="exampleInputPassword1" placeholder="">
+                                              </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Price</label>
+                                                <input name="price" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the price">
+                                              </div>
+                                              <div class="form-group">
+                                                <label for="exampleInputPassword1">Quantity</label>
+                                                <input name="qunatity" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the quantity">
+                                              </div>
+                                              <div class="form-group">
+                                                <label for="exampleInputPassword1">Description</label><br>
+                                                <textarea name="description" id="" cols="30" rows="3"></textarea>
+                                              </div>
+                                          
+                                           
+                                         
+    
+    
+    
+    
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                      <button type="submit" class="btn btn-primary">Add</button>
+                                    </div>
+                                </form>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                   </div>
 
                     <!-- Content Row -->
                     <div class="row">
@@ -372,34 +434,28 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Image</th>
+                                            <th>Brand Name</th>
+                                            <th>Product Name</th>
+                                            <th>Price</th>
+                                            <th>Description</th>
+                                            <th>Quantity</th>
+                                            <th>edit</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot>
+                                    
                                     <tbody>
+                                        @foreach ($electronic_product as $electronic_pd )
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
+                                            <td><img src="{{ url('img/products/'.$electronic_pd->image) }}"style="height: 100px; width: 150px;"></td>
+                                            <td>{{$electronic_pd->brand_name}}</td>
+                                            <td>{{$electronic_pd->product_name}}</td>
+                                            <td>{{$electronic_pd->price}}</td>
+                                            <td>{{$electronic_pd->description}}</td>
+                                            <td>{{$electronic_pd->quantity}}</td>
+                                            <td>delete and edit</td>
                                         </tr>
-                                   
+                                        @endforeach
                                       
                                       
                                        

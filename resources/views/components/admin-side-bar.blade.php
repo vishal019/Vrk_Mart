@@ -42,8 +42,8 @@
                 <a class="collapse-item" href="/product.mobile">Mobile</a>
                 <a class="collapse-item" href="/product.electronic">Electronics</a>
                 <a class="collapse-item" href="/product.fashion">Fashion</a>
-                <a class="collapse-item" href="/product.fashion">Home & Furniture</a>
-                <a class="collapse-item" href="/product.fashion">Appliances</a>
+                <a class="collapse-item" href="/product.home_and_furniture">Home & Furniture</a>
+                <a class="collapse-item" href="/product.appliances">Appliances</a>
             </div>
         </div>
     </li>
@@ -59,8 +59,8 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">All Banners:</h6>
-                <a class="collapse-item" href="utilities-color.html">Header Banner</a>
-                <a class="collapse-item" href="utilities-other.html">Other Banner</a>
+                <a class="collapse-item" href="admin.header_banner">Header Banner</a>
+                <a class="collapse-item" href="admin.other_banner">Other Banner</a>
             </div>
         </div>
     </li>

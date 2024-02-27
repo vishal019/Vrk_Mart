@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Fashion</title>
+    <title>Others banner</title>
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('js/jquery.min.js')}}"></script>
@@ -263,14 +263,14 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                  <div class="row">
+                   <div class="row">
                     <div class="container-fluid">
 
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">Fashion Product</h1>
+                            <h1 class="h3 mb-0 text-gray-800">Others Banners</h1>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                Add Fashion Product
+                                Add Banner
                               </button>
                               
                               <!-- Modal -->
@@ -278,46 +278,31 @@
                                 <div class="modal-dialog" role="document">
                                   <div class="modal-content">
                                     <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">Add Fashion Product</h5>
+                                      <h5 class="modal-title" id="exampleModalLabel">Add Banner</h5>
                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                       </button>
                                     </div>
                                     <div class="modal-body">
     
-                                        <form action="/add_fashion_product" method="POST" enctype="multipart/form-data">
+                                        <form action="/add_appliances_product" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group">
-                                              <label for="exampleInputEmail1">Product Name</label>
+                                              <label for="exampleInputEmail1">Baner Name</label>
                                               <input name="product_name" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter brand name">
                                               {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                                             </div>
+                                         
                                             <div class="form-group">
-                                              <label for="exampleInputPassword1">Type</label>
-                                              <input name="product_type" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the model name">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputPassword1">Insert Image</label>
-                                                <input name="image" type="file" class="form-control" id="exampleInputPassword1" placeholder="">
-                                              </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputPassword1">Price</label>
-                                                <input name="price" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the price">
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="exampleInputPassword1">Quantity</label>
-                                                <input name="qunatity" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the quantity">
+                                                <label for="exampleInputPassword1">Insert Banner Image</label>
+                                                <input name="Banner" type="file" class="form-control" id="exampleInputPassword1" placeholder="">
                                               </div>
                                               <div class="form-group">
                                                 <label for="exampleInputPassword1">Description</label><br>
                                                 <textarea name="description" id="" cols="30" rows="3"></textarea>
                                               </div>
                                           
-                                           
-                                         
-    
-    
-    
+                                        
     
                                     </div>
                                     <div class="modal-footer">
@@ -329,20 +314,20 @@
                                 </div>
                               </div>
                         </div>
-                  </div>
+                   </div>
 
                     <!-- Content Row -->
                     <div class="row">
 
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        {{-- <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Male</div>
-                                            {{-- <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div> --}}
+                                                Earnings (Monthly)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -350,7 +335,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <!-- Earnings (Monthly) Card Example -->
                         {{-- <div class="col-xl-3 col-md-6 mb-4">
@@ -372,15 +357,15 @@
 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
+                            {{-- <div class="card border-left-info shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Female
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    {{-- <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div> --}}
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm mr-2">
@@ -396,17 +381,17 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
 
                         <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        {{-- <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-warning shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Kids</div>
+                                                Pending Requests</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                         </div>
                                         <div class="col-auto">
@@ -415,7 +400,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
 
                     <!-- Content Row -->
@@ -433,30 +418,29 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
+                                       
+                                            
+                                        
                                         <tr>
                                             <th>Image</th>
                                             <th>Product Name</th>
-                                            <th>Type</th>
-                                            <th>Price</th>
-                                            <th>Descriiption</th>
-                                            <th>Quantity</th>
-                                            <th>Edit</th>
+                                            <th>Description</th>
+                                            <th>edit</th>
                                         </tr>
+
                                     </thead>
-                                    
+                                  
                                     <tbody>
-                                        @foreach ($fashion_product as $fashion)
+                                        @foreach ($other_banner as $ap )
+                                            
+                                        
                                         <tr>
-                                            <td><img src="{{ url('img/products/'.$fashion->image) }}"style="height: 100px; width: 150px;"></td>
-                                            <td>{{$fashion->product_name}}</td>
-                                            <td>{{$fashion->product_type}}</td>
-                                            <td>{{$fashion->price}}</td>
-                                            <td>{{$fashion->description}}</td>
-                                            <td>{{$fashion->quantity}}</td>
+                                            <td><img src="{{ url('img/products/'.$ap->banner) }}"style="height: 100px; width: 150px;"></td>
+                                            <td>{{$ap->banner_name}}</td>
+                                            <td>{{$ap->description}}</td>
                                             <td>edit and delete</td>
                                         </tr>
-                                        @endforeach
-                                   
+                                   @endforeach
                                       
                                       
                                        
