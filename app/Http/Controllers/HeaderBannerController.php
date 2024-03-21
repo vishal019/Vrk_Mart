@@ -18,10 +18,10 @@ class HeaderBannerController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create( Request $req)
     {
         $banner = new header_banner();
-        $banner->product_name=$req->input('banner_name');
+        $banner->banner_name=$req->input('banner_name');
         if($req->file('banner')){
             $file= $req->file('banner');
             $filename= $file->getClientOriginalName();
@@ -54,9 +54,11 @@ class HeaderBannerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(header_banner $header_banner)
+    public function frontend_show(header_banner $header_banner)
     {
-        //
+        $h_banner=header_banner::all();
+
+        return view('components.banner',['header_banner'=>$h_banner]);
     }
 
     /**

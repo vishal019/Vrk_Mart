@@ -18,10 +18,10 @@ class OthersBannerController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create( Request $req)
     {
         $other_banner = new others_banner();
-        $banner->product_name=$req->input('banner_name');
+        $banner->banner_name=$req->input('banner_name');
         if($req->file('banner')){
             $file= $req->file('banner');
             $filename= $file->getClientOriginalName();

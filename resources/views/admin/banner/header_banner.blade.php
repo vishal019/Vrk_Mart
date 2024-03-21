@@ -285,7 +285,7 @@
                                     </div>
                                     <div class="modal-body">
     
-                                        <form action="/add_appliances_product" method="POST" enctype="multipart/form-data">
+                                        <form action="/add_header_banner" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group">
                                               <label for="exampleInputEmail1">Banner Name</label>

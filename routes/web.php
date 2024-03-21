@@ -8,6 +8,10 @@ use App\Http\Controllers\HomeAndFurnitureProductsController;
 use App\Http\Controllers\AppliancesProductsController;
 use App\Http\Controllers\HeaderBannerController;
 use App\Http\Controllers\OthersBannerController;
+use App\Http\Controllers\index;
+use App\Http\Controllers\SmartphoneProductlist;
+
+
 
 
 
@@ -17,10 +21,7 @@ use App\Http\Controllers\OthersBannerController;
 
 
 // Admin Routes 
-Route::get('/', function () {
-
-    return view('index');
-});
+Route::get('/',[index::class,'show']);
 
 
 Route::group(['middleware'=>'web'],function(){
@@ -62,6 +63,13 @@ Route::post('/add_header_banner',[HeaderBannerController::class,'create']);
 
 Route::get('/admin.other_banner',[OthersBannerController::class,'show']);
 Route::post('/add_other_banner',[OthersBannerController::class,'create']);
+
+
+
+// product list 
+
+Route::get('/productlist.smartphone',[SmartphoneProductlist::class,'display_product']);
+
 
 
 // User Routes
