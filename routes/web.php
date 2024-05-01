@@ -10,6 +10,9 @@ use App\Http\Controllers\HeaderBannerController;
 use App\Http\Controllers\OthersBannerController;
 use App\Http\Controllers\index;
 use App\Http\Controllers\SmartphoneProductlist;
+use App\Http\Controllers\UserLoginController;
+use App\Http\Controllers\UserRegistrationController;
+
 
 
 
@@ -74,18 +77,16 @@ Route::get('/productlist.smartphone',[SmartphoneProductlist::class,'display_prod
 
 // User Routes
 
-Route::get('/login',function(){
+Route::get('/login',[UserLoginController::class,'show']);
+Route::post('/userlogincheck',[UserLoginController::class,'check']);
 
 
-    return view('User.User_login');
 
-});
-
-Route::get('/User_Registeration',function(){
+Route::get('/User_Registeration',[UserRegistrationController::class,'show']);
+Route::post('/sendregisterresponse',[UserRegistrationController::class,'create']);
 
 
-    return view('User.User_register');
 
-});
+Auth::routes();
 
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

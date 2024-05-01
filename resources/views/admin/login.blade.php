@@ -62,7 +62,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user"  method="POST" action="adminlogincheck">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
@@ -75,9 +75,11 @@
                                         <div class="form-group">
                                            
                                         </div>
-                                        <a style="margin-top:20px" href="index.html" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
+                                        {{-- <a style="margin-top:20px" type="submit" class="btn btn-primary btn-user btn-block">
+                                           Login 
+                                        </a> --}}
+                                        <button class="btn btn-primary btn-user btn-block" type="submit">login</button>
+                                        
                                         <hr>
                                        
                                        

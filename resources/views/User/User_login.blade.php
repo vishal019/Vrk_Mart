@@ -41,14 +41,22 @@
                                         <div class="text-center">
                                             <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                         </div>
-                                        <form class="user">
+                                        @if($errors->any())
+                                        <div class="alert alert-danger" role="alert">
+                                           @foreach ($errors->all() as $error)
+                                             {{$error}}  
+                                           @endforeach
+                                          </div>
+                                          @endif
+                                        <form class="user" method="POST" action="userlogincheck">
+                                            @csrf
                                             <div class="form-group">
-                                                <input type="email" class="form-control form-control-user"
+                                                <input type="email" name="email" class="form-control form-control-user"
                                                     id="exampleInputEmail" aria-describedby="emailHelp"
                                                     placeholder="Enter Email Address...">
                                             </div>
                                             <div class="form-group">
-                                                <input style="margin-top:20px" type="password" class="form-control form-control-user"
+                                                <input style="margin-top:20px" name="password" type="password" class="form-control form-control-user"
                                                     id="exampleInputPassword" placeholder="Password">
                                             </div>
                                             <div class="form-group">
@@ -58,9 +66,9 @@
                                                         Me</label>
                                                 </div>
                                             </div>
-                                            <a  style="margin-top:20px" href="index.html" class="btn btn-primary btn-user btn-block">
-                                                Login
-                                            </a>
+                                        
+
+                                            <button class="btn btn-primary btn-user btn-block" type="submit">Login</button>
                                             <hr>
                                            
                                            

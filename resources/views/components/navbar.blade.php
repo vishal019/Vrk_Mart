@@ -1,5 +1,6 @@
 <div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
   <link
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -63,13 +64,45 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       </ul>
       <!-- Left links -->
-      <div class="d-flex align-items-center">
-       <a href="/login"> <button data-mdb-ripple-init type="button"  class="btn btn-link px-3 me-2">
-          Login
-        </button></a>
       <a class="text-reset me-3" href="#">
         <i class="fas fa-shopping-cart"></i>
-      </a>       
+      </a>    
+      <div class="d-flex align-items-center">
+         @guest
+         @if (Route::has('login'))
+         
+             <a style="padding: 20px" class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a> 
+         
+     @endif
+
+     @if (Route::has('register'))
+        
+             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+       
+      @endif 
+      @else
+     <li class="nav-item dropdown">
+         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+             {{ Auth::user()->name }}
+         </a>
+
+         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+             <a class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                 {{ __('Logout') }}
+             </a>
+
+             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                 @csrf
+             </form>
+         </div>
+     </li>
+        @endguest
+
+
+
+        
       </div>
     </div>
     <!-- Collapsible wrapper -->
