@@ -39,22 +39,40 @@
                                 Laravel - Razorpay Payment Gateway Integration
                             </div>
   
-                            <div class="card-body text-center">
-                                <form action="" method="POST" >
-                                    @csrf
-                                    <script src="https://checkout.razorpay.com/v1/checkout.js"
-                                            data-key="{{ env('RAZORPAY_KEY') }}"
-                                            data-amount="{{$price}}"
-                                            data-buttontext="Pay {{$price}} INR"
-                                            data-name="V-Mart"
-                                            data-description="Rozerpay"
-                                            data-image="{{asset('img/logo.png')}}"
-                                            data-prefill.name="name"
-                                            data-prefill.email="email"
-                                            data-theme.color="#ff7529">
-                                    </script>
-                                </form>
-                            </div>
+                        
+                            <script src="https://checkout.razorpay.com/v1/checkout.js"></script>'
+                            
+                            
+                            <button onclick="startPayment()">Pay {{$price}}</button>
+                            
+                            
+                            <script>
+                                function startPayment() {
+                                    var options = {
+                                        key: "' . $YOUR_KEY_ID . '", // Enter the Key ID generated from the Dashboard
+                                        amount: {{$price}}, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                                        currency: "' . INR . '",
+                                        name: "Acme Corp",
+                                        description: "Test transaction",
+                                        image: "https://cdn.razorpay.com/logos/GhRQcyean79PqE_medium.png",
+                                        order_id: "' . $order_IluGWxBm9U8zJ8 . '", // This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                                        prefill: {
+                                            name: "Gaurav Kumar",
+                                            email: "gaurav.kumar@example.com",
+                                            contact: "9000090000"
+                                        },
+                                        notes: {
+                                            address: "Razorpay Corporate Office"
+                                        },
+                                        theme: {
+                                            "color": "#3399cc"
+                                        },
+                                        callback_url: "' . $callback_url . '"
+                                    };
+                                    var rzp = new Razorpay(options);
+                                    rzp.open();
+                                }
+                            </script>
                         </div>
   
                     </div>
