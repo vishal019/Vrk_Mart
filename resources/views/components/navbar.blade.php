@@ -70,6 +70,7 @@
       </ul>
       <!-- Left links -->
       <a class="text-reset me-3" href="#">
+        <span class="badge badge-pill bg-danger">0</span>
         <i class="fas fa-shopping-cart"></i>
       </a>    
       <div class="d-flex align-items-center">

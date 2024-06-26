@@ -101,11 +101,12 @@ Route::post('/sendregisterresponse',[UserRegistrationController::class,'create']
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 // payment routes 
-Route::get('product',[RazorpayController::class,'index']);
-Route::post('razorpay-payment',[RazorpayController::class,'store'])->name('razorpay.payment.store');
+Route::post('productlist.smartphone/buynow_product',[buynow::class,'payment']);
+Route::post('razorpay-payment',[buynow::class,'store'])->name('razorpay.payment.store');
 
 // buynow route 
-Route::post('productlist.smartphone/buynow_product',[buynow::class,'payment']);
+
+
