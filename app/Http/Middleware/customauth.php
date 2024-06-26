@@ -17,6 +17,13 @@ class customauth
     {
 
         // echo('hii this is middleware');
+        $path = $request->path();
+
+    //    if($path == 'adminpanel'){
+
+    //       return redirect('admin');
+
+    //    }
         
         return $next($request);
     }

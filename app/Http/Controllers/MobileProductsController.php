@@ -40,6 +40,33 @@ class MobileProductsController extends Controller
 
         
     }
+    public function get_product(Request $request,$id){
+
+        // echo($id);
+
+        $smartphone = mobile_products::where('id',$id)->first();
+        $all_product=mobile_products::all();
+
+            // echo($smartphone);
+        //   $product_array = array(
+        //     'brand_name'=>str($smartphone->brand_name),
+        //     'product_price'=>str($smartphone->price),
+        //     'mobile_model'=>str($smartphone->mobile_model),
+        //     'img'=>str($smartphone->mobile_image),
+        //     'mobile_price'=>str($smartphone->price),
+        //     'mobile_quantity'=>str($smartphone->quantity),
+        //     'description'=>str($smartphone->description)
+        //   );
+        
+        // $product_array= $smartphone[0];
+        // echo($smartphone);
+        // echo($all_product);
+
+
+        return view('frontend.display_product',compact('smartphone'),['all_product'=>$all_product]);
+
+
+    }
 
     /**
      * Store a newly created resource in storage.

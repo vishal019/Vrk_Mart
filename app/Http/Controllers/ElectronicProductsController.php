@@ -40,9 +40,10 @@ class ElectronicProductsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function display_electronic_frontend(Request $request)
     {
-        //
+        $electronic = electronic_products::all();
+        return view('frontend.electronic',['electronic'=>$electronic]);
     }
 
     /**
@@ -53,7 +54,7 @@ class ElectronicProductsController extends Controller
 
         $electronic =electronic_products::all();
 
-        return view('admin.product_list.electronic_product',['electronic_product'=>$electronic]);
+        return view('admin.product_list.electronic_product',['electronic'=>$electronic]);
     }
 
     /**

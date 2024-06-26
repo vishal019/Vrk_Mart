@@ -41,9 +41,11 @@ class FashionProductsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function display_fashion_frontend(Request $request)
     {
-        //
+        $fashion = fashion_products::all();
+        return view('frontend.fashion',['fashion'=>$fashion]);
+        
     }
 
     /**

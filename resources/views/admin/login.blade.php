@@ -62,14 +62,15 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user"  method="POST" action="adminlogincheck">
+                                    <form class="user"  method="POST" action="validate.admin">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
+                                            <input type="text" name="username" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                                placeholder="Enter Username...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" style="margin-top:20px" class="form-control form-control-user"
+                                            <input type="password" name="password" style="margin-top:20px" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password">
                                         </div>
                                         <div class="form-group">

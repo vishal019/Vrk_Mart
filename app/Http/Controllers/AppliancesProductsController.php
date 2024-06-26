@@ -14,6 +14,17 @@ class AppliancesProductsController extends Controller
     {
         //
     }
+    public function get_appliances_product(Request $request,$id){
+
+        $appliances_product_data = appliances_products::where('id',$id)->first();
+        $all_product = appliances_products::all();
+
+        // echo($appliances_product_data);
+
+        return view('frontend.display_appliances_product',compact('appliances_product_data'),['all_product'=>$all_product]);
+
+
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -43,6 +54,14 @@ class AppliancesProductsController extends Controller
     public function store(Request $request)
     {
         //
+    }
+    public function frontend_appliances_display(Request $request)
+    {
+
+        $appliances = appliances_products::all();
+
+        return view('frontend.appliances',['appliances'=>$appliances]);
+
     }
 
     /**

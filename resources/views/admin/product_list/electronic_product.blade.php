@@ -445,7 +445,7 @@
                                     </thead>
                                     
                                     <tbody>
-                                        @foreach ($electronic_product as $electronic_pd )
+                                        @foreach ($electronic as $electronic_pd )
                                         <tr>
                                             <td><img src="{{ url('img/products/'.$electronic_pd->image) }}"style="height: 100px; width: 150px;"></td>
                                             <td>{{$electronic_pd->brand_name}}</td>

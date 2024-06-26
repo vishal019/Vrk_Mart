@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class admin_registration extends Model
+class Payment extends Model
 {
     use HasFactory;
-
-    protected $table='admin_registration';
-    
+    protected $table = 'payments';
+    protected $guarded = ['id'];
 }

@@ -14,7 +14,7 @@
     <section style="background-color: #eee;">
         <div class="container py-5">
 
-            @foreach ($product as $phone)
+            @foreach ($handf as $handf_product)
                 
         
           <div class="row justify-content-center mb-3">
@@ -24,8 +24,8 @@
                   <div class="row">
                     <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                       <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                        <img src="{{ url('img/products/'.$phone->mobile_image) }}"style="height: 150px; width: 200px;">
-                        <a href="productlist.smartphone/{{$phone->id}}">
+                        <img src="{{ url('img/products/'.$handf_product->image) }}"style="height: 150px; width: 200px;">
+                        <a href="#!">
                           <div class="hover-overlay">
                             <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
                           </div>
@@ -33,7 +33,7 @@
                       </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-6">
-                      <h5>{{$phone->brand_name}} {{$phone->mobile_model}}</h5>
+                      <h5>{{$handf_product->product_name}} {{$handf_product->product_type}}</h5>
                       <div class="d-flex flex-row">
                         <div class="text-danger mb-1 me-2">
                           <i class="fa fa-star"></i>
@@ -58,12 +58,12 @@
                         <span>Casual<br /></span>
                       </div>
                       <p class="text-truncate mb-4 mb-md-0">
-                        {{$phone->description}}
+                        {{$handf_product->description}}
                       </p>
                     </div>
                     <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
                       <div class="d-flex flex-row align-items-center mb-1">
-                        <h4 class="mb-1 me-1">₹{{$phone->price}}</h4>
+                        <h4 class="mb-1 me-1">₹{{$handf_product->price}}</h4>
                         {{-- <span class="text-danger"><s>₹20.99</s></span> --}}
                       </div>
                       <h6 class="text-success">Free shipping</h6>
@@ -85,7 +85,7 @@
           
         </div>
       </section>
-      <x-footer/>
 
+      <x-footer/>
 </body>
 </html>

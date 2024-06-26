@@ -12,6 +12,9 @@ use App\Http\Controllers\index;
 use App\Http\Controllers\SmartphoneProductlist;
 use App\Http\Controllers\UserLoginController;
 use App\Http\Controllers\UserRegistrationController;
+use App\Http\Controllers\validate_admin_login;
+use App\Http\Controllers\buynow;
+
 
 
 
@@ -30,21 +33,25 @@ Route::get('/',[index::class,'show']);
 Route::group(['middleware'=>'web'],function(){
 
 
-    Route::get('/admin',function(){
-        return view('admin/login');
-});
+    Route::get('/admin',[validate_admin_login::class,'show_admin_login']);
+    Route::post('/validate.admin',[validate_admin_login::class,'validate_login']);
+
 Route::get('/adminpanel',function(){
     return view('admin/Adminpanel');
 
 });
+Route::get('/adminlogout',[validate_admin_login::class,'admin_logout']);
 
 });
+
+
 
 
 
 // product Routes 
 Route::get('/product.mobile',[MobileProductsController::class,'show']);
 Route::post('/add_mobile_product',[MobileProductsController::class,'create']);
+
 
 Route::get('/product.electronic',[ElectronicProductsController::class,'show']);
 Route::post('/add_electronic_product',[ElectronicProductsController::class,'create']);
@@ -72,7 +79,12 @@ Route::post('/add_other_banner',[OthersBannerController::class,'create']);
 // product list 
 
 Route::get('/productlist.smartphone',[SmartphoneProductlist::class,'display_product']);
-
+Route::get('/productlist.smartphone/{id}',[MobileProductsController::class,'get_product']);
+Route::get('/productlist.appliances',[AppliancesProductsController::class,'frontend_appliances_display']);
+Route::get('productlist.appliances/{id}',[AppliancesProductsController::class,'get_appliances_product']);
+Route::get('/productlist.home_and_furniture',[HomeAndFurnitureProductsController::class,'display_homeandfurniture_frontend']);
+Route::get('/productlist.electronic',[ElectronicProductsController::class,'display_electronic_frontend']);
+Route::get('/productlist.fashion',[FashionProductsController::class,'display_fashion_frontend']);
 
 
 // User Routes
@@ -90,3 +102,10 @@ Route::post('/sendregisterresponse',[UserRegistrationController::class,'create']
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// payment routes 
+Route::get('product',[RazorpayController::class,'index']);
+Route::post('razorpay-payment',[RazorpayController::class,'store'])->name('razorpay.payment.store');
+
+// buynow route 
+Route::post('productlist.smartphone/buynow_product',[buynow::class,'payment']);

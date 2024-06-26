@@ -41,9 +41,10 @@ class HomeAndFurnitureProductsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function display_homeandfurniture_frontend(Request $request)
     {
-      
+      $home_and_furniture=home_and_furniture_products::all();
+      return view('frontend.home_and_furniture',['handf'=>$home_and_furniture]);
     }
 
     /**
